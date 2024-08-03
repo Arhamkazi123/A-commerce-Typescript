@@ -1,0 +1,97 @@
+
+.home {
+    padding: 20px;
+    background-color: #f4f4f4; 
+  }
+  
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: center; 
+  }
+  
+ 
+  .product-card {
+    border: 1px solid #ddd; 
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #fff; /* White background for cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  /* Product Image */
+  .product-image {
+    width: 100%;
+    height: 250px; /* Fixed height for uniform image sizes */
+    object-fit: cover; /* Crop image to fit */
+  }
+  
+  /* Product Details */
+  .product-details {
+    padding: 15px;
+  }
+  
+  /* Product Name */
+  .product-name {
+    font-size: 20px;
+    margin: 0;
+    color: #333; /* Dark text color */
+    font-weight: bold;
+  }
+  
+  /* Product Price */
+  .product-price {
+    color: #e67e22; /* Orange color for price */
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  /* Product Description */
+  .product-description {
+    color: #555; /* Slightly lighter text color for description */
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  /* Product Creation Date */
+  .product-date {
+    color: #888; /* Gray color for date */
+    font-size: 12px;
+  }
+  
+  /* Hover Effects */
+  .product-card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+  }
+  
+  /* Add to Cart Button */
+.Addtocart {
+    background-color: #e67e22; /* Orange background for prominence */
+    color: white; /* White text for contrast */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for a better click area */
+    font-size: 16px; /* Slightly larger font size for readability */
+    font-weight: bold; /* Bold text for emphasis */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition effects */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  }
+  
+  /* Hover State */
+  .Addtocart:hover {
+    background-color: #d35400; /* Darker orange on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
+  }
+  
+  /* Focus State */
+  .Addtocart:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.5); /* Orange outline for accessibility */
+  }
+  
