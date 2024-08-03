@@ -34,7 +34,7 @@
   }
   
   /* Input Fields */
-  input[type="text"] {
+  input[type="text"],input[type="password"] {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ddd;
