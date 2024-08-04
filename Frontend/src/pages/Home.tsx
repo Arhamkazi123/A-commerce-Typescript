@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import "./Home.css";
 import axios from "axios";
 
+
 interface Product {
   _id: string;
   productname: string;
@@ -14,6 +15,9 @@ interface Product {
 }
 
 const Home: React.FC = () => {
+
+ 
+  
 
   const [info, setInfo] = useState<Product[]>([]);
 
