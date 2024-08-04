@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import axios from 'axios';
 import './Visitcart.css'; // Ensure you have this CSS file for styling
-import { isAuthenticated } from '../utility/checkauth';
+import { Link } from 'react-router-dom';
 
 interface Product {
   id: string;
@@ -16,7 +16,8 @@ interface Product {
 
 const Visitcart: React.FC = () => {
   const [cartItems, setCartItems] = useState<Product[]>([]);
-  const andar=isAuthenticated();
+
+  const [totalbill,settb]=useState<number>(0);
   
   useEffect(() => {
     const fetchSaved = async () => {
@@ -26,6 +27,7 @@ const Visitcart: React.FC = () => {
         });
         
         setCartItems(res.data);
+       
       } catch (error) {
         alert("Not able to fetch");
         console.error(error);
@@ -34,6 +36,8 @@ const Visitcart: React.FC = () => {
     
     fetchSaved();
   }, []);
+
+  console.log(totalbill);
 
   return (
     <>
@@ -52,9 +56,19 @@ const Visitcart: React.FC = () => {
                   <h3>{item.product.name}</h3>
                   <p>{item.product.description}</p>
                   <p>Price: {item.product.price}</p>
+                  
+
+                
+                  
                 </div>
+                
               </div>
+
+             
             ))}
+             <div className="arealink">
+                Dont stop,shop more <Link to="/">Begin!!</Link>
+                </div>
           </div>
         )}
       </div>

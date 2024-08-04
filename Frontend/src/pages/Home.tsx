@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import "./Home.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 interface Product {
@@ -18,7 +19,7 @@ const Home: React.FC = () => {
 
  
   
-
+const nav=useNavigate();
   const [info, setInfo] = useState<Product[]>([]);
 
   const formatDate = (dateString: string) => {
@@ -38,6 +39,25 @@ const Home: React.FC = () => {
     fetchProducts();
   }, []);
 
+  const handleaddtocart=async(userproduct:string)=>{
+    try{
+
+      if(localStorage.getItem("protectvalue")==="true"){
+      const res=await axios.post("http://localhost:8000/api/cart/savecartitems",{userproduct},{
+        withCredentials:true
+      })
+      alert("Product has been added");
+      nav("/visitcart")
+    }else{
+      alert("You need to sigin first");
+      nav("/login");
+    }
+
+    }catch(error){
+      alert("Not able to save the item");
+    }
+  }
+
   return (
     <>
       <Navbar />
@@ -52,7 +72,7 @@ const Home: React.FC = () => {
                 <p className="product-description">{product.description}</p>
                 <p className="product-category">{product.category}</p>
                 <p className="product-date">Available from: {formatDate(product.createdAt)}</p>
-                <button className="Addtocart">Add to Cart</button>
+                <button className="Addtocart" onClick={()=>handleaddtocart(product._id)}>Add to Cart</button>
               </div>
             </div>
           ))}

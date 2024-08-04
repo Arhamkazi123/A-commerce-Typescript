@@ -16,9 +16,9 @@ const App:React.FC=()=>{
      <Route path="/register" element={<Registerpage />} />
      
 
-     {/* <Route element={<ProtectedRoute />}> */}
+     <Route element={<ProtectedRoute />}>
      <Route path="/visitcart" element={<Visitcart />} />
-        {/* </Route> */}
+        </Route>
 
     </Routes>
 

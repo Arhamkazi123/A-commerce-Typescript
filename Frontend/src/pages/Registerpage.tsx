@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import Navbar from '../components/Navbar'
 import axios from "axios"
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,Link } from 'react-router-dom'
 
 interface userdetails{
     username:string;
@@ -10,6 +10,7 @@ interface userdetails{
 }
 
 const Registerpage:React.FC = () => {
+    
     const nav=useNavigate();
 
     const [fd,setfd]=useState<userdetails>({
@@ -25,12 +26,13 @@ const Registerpage:React.FC = () => {
             const res=await axios.post("http://localhost:8000/api/auth/register",fd, {
                 withCredentials: true // Ensure cookies are sent with the request
             });
-            alert("You have successflly registered");
+            alert("You have successfully registered");
             nav("/");
+            localStorage.setItem("protectvalue","true");
 
         }catch(error){
             console.log(error);
-            alert("Internal server eror please register again")
+            alert("Internal server error please register again")
         }
     }
 
@@ -73,6 +75,9 @@ const Registerpage:React.FC = () => {
 
             <button type="submit">Register</button>
         </form>
+        <div className="linkarea">
+                Already have an account? <Link to="/login">Click here</Link>
+            </div>
     </div>
 </div>
     </>

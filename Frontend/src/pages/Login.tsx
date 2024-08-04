@@ -2,7 +2,7 @@ import { useState } from "react"
 import Navbar from "../components/Navbar"
 import "./Login.css"
 import axios from "axios"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 interface Formdata{
     email:string;
@@ -11,6 +11,7 @@ interface Formdata{
 
 const Login:React.FC = () => {
 
+    localStorage.setItem("protectvalue","false");
     const nav=useNavigate();
     const [fd,setfd]=useState<Formdata>({
         email:"",
@@ -23,8 +24,9 @@ const Login:React.FC = () => {
             const res=await axios.post("http://localhost:8000/api/auth/login",fd, {
                 withCredentials: true // Ensure cookies are sent with the request
             });
-            alert("Logged in succssfully");
+            alert("Logged in successfully");
             nav("/");
+            localStorage.setItem("protectvalue","true");
 
         }catch(error){
             alert("Not able to login");
@@ -58,6 +60,9 @@ const Login:React.FC = () => {
             onChange={(e)=>setfd({ ...fd, [e.target.name]: e.target.value })}/>
 
             <button type="submit">Login</button>
+            <div className="linkarea">
+                Dont have an account? <Link to="/register">Click here</Link>
+            </div>
         </form>
     </div>
 </div>

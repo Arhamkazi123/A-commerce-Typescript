@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+BE+VLG:wght@100..400&family=Playwrite+IS:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .cart-container {
     padding: 20px;
     background-color: #f9f9f9;
@@ -40,5 +42,30 @@
   
   .cart-item-details p {
     margin: 5px 0;
+  }
+
+  .arealink {
+    font-family: "Playwrite IS", cursive;
+    font-size: larger;
+    text-align: center; /* Center align the text */
+    margin-top: 20px; /* Add space above the element */
+    padding: 15px; /* Add padding for better spacing */
+    background-color:white; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+   
+  }
+  
+  
+  
+  .arealink a {
+    color: #007bff; /* Link color */
+    font-weight: bold; /* Make the link text bold */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+  }
+  
+  .arealink a:hover {
+    color: #0056b3; /* Darker color on hover */
+    text-decoration: underline; /* Underline on hover for emphasis */
   }
   
