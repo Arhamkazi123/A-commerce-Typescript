@@ -9,7 +9,7 @@ const generateTokenAndSetCookie = (userId, res) => {
     path: "/", // Ensures the cookie is accessible across the entire site
     maxAge: 15 * 24 * 60 * 60 * 1000, // 15 days
     httpOnly: true, // Prevents client-side access to the cookie
-    sameSite: "lax", // Adjust as needed for cross-site requests
+    sameSite: "None", // Adjust as needed for cross-site requests
     secure: false, // Set to false in development (use true in production)
   });
 };

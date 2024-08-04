@@ -20,7 +20,9 @@ const Login:React.FC = () => {
     const handlelogin=async(e:React.FormEvent)=>{
         e.preventDefault();
         try{
-            const res=await axios.post("http://localhost:8000/api/auth/login",fd);
+            const res=await axios.post("http://localhost:8000/api/auth/login",fd, {
+                withCredentials: true // Ensure cookies are sent with the request
+            });
             alert("Logged in succssfully");
             nav("/");
 

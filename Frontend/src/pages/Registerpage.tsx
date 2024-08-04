@@ -22,7 +22,9 @@ const Registerpage:React.FC = () => {
         e.preventDefault();
         
         try{
-            const res=await axios.post("http://localhost:8000/api/auth/register",fd);
+            const res=await axios.post("http://localhost:8000/api/auth/register",fd, {
+                withCredentials: true // Ensure cookies are sent with the request
+            });
             alert("You have successflly registered");
             nav("/");
 
